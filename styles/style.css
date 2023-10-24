@@ -3,3 +3,36 @@
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.container {
+    text-align: center;
+    background-color: #007a8a;
+    border: 1px solid;
+    border-radius: 14px;
+    width: 400px;
+    margin: auto;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.btn {
+    height: 36px;
+    width: 80px;
+    background-color: #b1c9cc;
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#time {
+    margin-bottom: 18px;
+    font-size: 72px;
+    color: white;
+}
+
+h1 {
+    font-size: 32px;
+    color: white;
+}
