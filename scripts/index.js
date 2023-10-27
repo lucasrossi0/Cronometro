@@ -1,14 +1,46 @@
 let startBtn = document.getElementById("start");
 let stopBtn = document.getElementById("stop");
-let restartBtn = document.getElementById("restart");
+let resetBtn = document.getElementById("restart");
 let timeDisplay = document.getElementById("time");
+let seconds = 0;
+let timer;
 
-// click no start, o display comeca a rodar
-// click no stop, o display para de rodar
-// click no restart, o display volta ao 0
+function createSeconds(segundos) {
+  const data = new Date(segundos * 1000);
+  return data.toLocaleTimeString("pt-BR", {
+    hour12: false,
+    timeZone: "UTC",
+  });
+}
 
-// funcao para iniciar o tempo
-// funcao para parar o tempo
-// funcao para zerar o tempo
+function initiateTime() {
+  timeDisplay.style.color = "white";
+  timer = setInterval(function () {
+    seconds++;
+    timeDisplay.innerHTML = createSeconds(seconds);
+  }, 1000);
+}
 
-startBtn.addEventListener("click", () => {});
+function stopTime() {
+  timeDisplay.style.color = "red";
+  clearInterval(timer);
+}
+
+function resetTime() {
+  timeDisplay.innerText = "00:00:00";
+  seconds = 0;
+  timeDisplay.style.color = "white";
+  clearInterval(timer);
+}
+
+startBtn.addEventListener("click", () => {
+  initiateTime();
+});
+
+stopBtn.addEventListener("click", () => {
+  stopTime();
+});
+
+resetBtn.addEventListener("click", () => {
+  resetTime();
+});
