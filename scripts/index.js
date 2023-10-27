@@ -34,6 +34,7 @@ function resetTime() {
 }
 
 startBtn.addEventListener("click", () => {
+  clearInterval(timer);
   initiateTime();
 });
 
